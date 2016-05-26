@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>아이뉴스24</title>
+    <style type="text/css">
+        *{margin:0; padding:0;}
+        ul,ol{
+            list-style:none;
+        }
+        .wrapper{outline:1px #F00 solid;
+                width:900px; height:540px;
+                margin:20px auto 0;
+        }
+        .header{border-bottom:2px #000 solid;
+                margin:0 30px 15px;
+                height:55px;
+                padding:20px 0 33px;
+                
+        }
+        .contents{outline:1px #0F0 solid;
+                height:386px;
+                margin:0 30px;
+        }
+        .lc{outline:1px #F00 solid;
+            width:503px;
+            height:100%;
+            float:left;
+        }
+        .lc .top-article ul{border:1px #F00 solid;}
+        .lc .top-article ul li { margin-left:150px;}
+        .lc .top-article ul li.firstli {margin-left:0; margin-bottom:10px;}
+        .lc .top-article ul li.firstli strong{display:block;}
+        .lc .top-article ul li.firstli span{font-size:12px; display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+        .lc .top-article ul li.firstli img{float:left; margin-right:10px;}
+        .rc{outline:1px #00F solid;
+            height:100%;
+            margin-left:513px;
+        }
+        .top-article{outline:1px #F00 solid;
+                    height:110px;
+                    margin-bottom:10px;
+        }
+        .bottom-article{outline:1px #F00 solid;
+                        height:265px;
+        }
+        .rc-top{outline:1px #F00 solid;
+                height:188px;
+        }
+        .rc-bottom{outline:1px #0F0 solid;
+                height:133px;
+                margin-bottom:27px;
+        }
+        .rc-promotion{outline:1px #F00 solid;
+                height:37px;
+        }
+        .rc-top-l{outline:1px #00F solid;
+                width:130px;
+                height:100%;
+                float:left;
+        }
+        .rc-top-r{outline:1px #F00 solid;
+                width:130px;
+                height:100%;
+                margin-left:150px;
+        }
+        .wrapper .header .left{outline:1px #F00 solid; width:270px; float:left;}
+        .wrapper .header .right{outline:1px #F00 solid; width:300px; height: 90px; float:right;}
+        .wrapper .header .right img{width:100%; repeat:no-repeat;}
+        .wrapper .header .content{border:1px #00F solid; width:350px; height:30px; clear:left;}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="left"><img src="http://static.naver.net/newsstand/up/2013/0813/nsd114738777.gif"></img></div>
+            <div class="right"><img src="http://adcreative.naver.com/ad3/1004/1004874/468_60_11446516899395.jpg"></img></div>
+            <div class="content">
+                <button type="button">구독하기</button>
+                <button type="button">이용자한마디</button>
+                <button type="button">소셜보내기</button>
+                <span>2016-5-26</span>
+        </div>
+        </div>
+        <div class="contents">
+            <div class="lc">
+                <div class="top-article">
+                    <ul>
+                        <li class="firstli">
+                            <img src="http://static.naver.net/newsstand/2016/0526/inews/150458/001.jpg" alt="대머리아저씨">
+                            <strong>삼성 "퀀텀닷, 차세대 TV 화질 역사쓸 것"</strong>
+                            <span>장혁 삼성전자 종합기술원 부사장 '국제 퀀텀닷 컨퍼런스' 기조연설 나서</span>
+                        </li>
+                        <li><a href="mailto:">김현석 삼성전자 "퀀텀닷 TV, OLED 앞선다"</a></li>
+                        <li><a href="mailto:">삼성전자, 멕시코서 '퀀텀닷 기술 세미나'..</a></li>
+                    </ul>
+                </div>
+                <div class="bottom-article"></div>
+            </div>
+            
+            <div class="rc">
+                <div class="rc-top">
+                    <div class="rc-top-l"></div>
+                    <div class="rc-top-r"></div>
+                </div>
+                <div class="rc-bottom"></div>
+                <div class="rc-promotion"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
