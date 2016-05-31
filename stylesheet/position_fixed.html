@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fixed</title>
+    <style type="text/css">
+        .top{border:1px #F00 solid; height:80px; width:100%; background-color:rgba(0,0,0,.5);
+            position:fixed; top:0;
+        }
+        .content{border:1px #F00 solid; width:800px; height:2000px;
+                margin:0 auto;
+                position:relative;
+        }
+        .fly{border:1px #F00 solid; width:80px; height:200px;
+            position:fixed;
+            left:50%; margin-left:410px;
+        }
+        body{padding-top:80px;}
+    </style>
+</head>
+<body>
+    <div class="top"></div>
+    <div class="content">
+        <div class="fly"></div>
+    </div>
+    
+</body>
+</html>
