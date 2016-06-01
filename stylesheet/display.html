@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    *{margin:0; padding:0;}
+    ul{list-style:none;}
+    .menu{border:1px #F00 solid; text-align:center;}
+    li{width:100px; outline:1px #F00 solid; display:inline-block;font-size:12;}
+    ul{font-size:0;}
+    /*ul에 font-size를 0을 주고(다 없어짐) 다시 li에 font-size를 12를 주면
+    li안의 텍스트에만 사이즈가 적용된다고 외워라...*/
+    
+    
+    .table{border:1px #F00 solid; display:table; width:100%; }
+    .table div{border:1px #F00 solid; display:table-cell; height:200px; vertical-align:middle;text-align:center}
+    /*table-cell속성으로 했기 때문에 vertical-align이 먹는다(셀 중간에 글 써짐)*/
+    .aa{width: 100px;height: 100px;border: 1px #F00 solid;  vertical-align:middle; text-align:center; line-height:100px;}
+    /*table-cell속성이 아니기 때문에 vertical-align안먹음*/
+    
+    
+    /*html,body{height:100%;}
+    .aside, .content {display:table-cell;border:1px #F00 solid; vertical-align:top;}<-좌,우로 배치된다    
+    .content img {width:100%;}  <-브라우저 창의 크기가 달라지면 유동적으로 움직인다
+    .aside {width:300px; }  <-aside는 브라우저 창의 크기가 달라져도 300px을 유지한다*/
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="">text</a></li>
+            <li><a href="">text</a></li>
+            <li><a href="">text</a></li>
+            <li><a href="">text</a></li>
+            <li><a href="">text</a></li>
+            <li><a href="">text</a></li>
+        </ul>
+    </div>
+    
+    
+    <div class="aa">test<br/> sfsdf</div>
+    <div class="table">
+        <div>text</div>
+        <div>text</div>
+        <div>text</div>
+        <div>text</div>
+        <div>text</div>
+        <div>text</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{margin:0; padding:0;}
+        .a{outline:1px #f00 solid;
+            width:400px; height:400px;
+            position:absolute;
+            left:0;
+        }
+        
+        .b{outline:1px #f00 solid;
+            width:400px; height:400px;
+            position:relative;
+            left:400px;
+        }
+        
+        .z{outline:1px #00f solid;
+            width:200px; height:200px;
+            position:relative;
+            top:0;
+            left:0;
+        }
+        .zz{outline:1px #0f0 solid;
+            width:200px; height:200px;
+            position:relative;
+            top:0;
+            right:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="a">1</div>
+        <div class="b">2
+            <div class="z"></div>
+            <div class="zz"></div>
+            <div class="zzz"></div>
+            <div class="zzzz"></div>
+        </div>
+        <div class="c">3</div>
+    </div>
+</body>
+</html>
