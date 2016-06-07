@@ -4,77 +4,115 @@
     <meta charset="UTF-8">
     <title>news2</title>
     <style type="text/css">
-         .wrapper{outline:1px #F00 solid;
-                width:900px; height:540px;
-        }
-        .header{border-bottom:3px #000 solid;
-                height:108px; 
-                margin:0 30px 20px;
-        }
-        .contents{outline:1px #F00 solid;
-                height:380px;
-                margin:0 30px;
-        }
-        .top{outline:1px #00F solid;
-            height:173px;
-            margin-bottom:20px;
-        }
-        .top-l{outline:1px #F00 solid;
-            height:100%; width:267px;
-            float:left;
-        }
-        .top-r{outline:1px #F00 solid;
-            height:100%; width:267px;
-            float:right;
-        }
-        .top-m{outline:1px #0F0 solid;
-            height:100%; width:267px;
-            margin: 0 19.5px 0 286.5px;
-        }
-        .bottom{outline:1px #00F solid;
-            height:180px;
-        }
-        .b-l{outline:1px #F00 solid;
-            height:100%; width:410px;
-            float:left;
-        }
-        .b-r{outline:1px #F00 solid;
-            height:100%; 
-            margin-left:430px;
-        }
-        .bl-top{outline:1px #F00 solid;
-                height:80px;
-                margin-bottom:20px;
-        }
-        .bl-bottom{outline:1px #F00 solid;
-                height:80px;
-        }
-        .br-top{outline:1px #F00 solid;
-                height:80px;
-                margin-bottom:20px;
-        }
-        .br-bottom{outline:1px #F00 solid;
-                height:80px;
-        }
+        .wrapper{outline:1px #F00 solid; width:900px; height:540px;}
+        a{text-decoration: none;}
+        a, strong, span{margin:0; padding:0;}
+        .header{border-bottom:3px #000 solid; height:108px; margin:0 30px 20px;}
+        .contents{outline:1px #F00 solid; height:380px; margin:0 30px;}
+        .wrapper .header .left{outline:1px #F00 solid; width:260px; float:left; margin:10px 0 5px 0;}
+        .wrapper .header .right{outline:1px #F00 solid; width:468px; height:60px; float:right; margin-top:35px;}
+        .wrapper .header .right img{width:100%; repeat:no-repeat;}
+        .wrapper .header .content{outline:1px #00F solid; width:350px; height:22px; clear:left;}
+        .top{outline:1px #00F solid; height:173px; margin-bottom:20px;}
+        .top-l{outline:1px #F00 solid; height:100%; width:267px; float:left;}
+        .top-l>a, .top-r>a, .top-m>a{position:absolute;}
+        .text{width: 257px; height: 50px; padding: 5px 5px 0 5px; display:block; position:absolute; bottom:0; background-color:rgba(0, 0, 0, 0.7); color:#fff;}
+        
+        .top-r{outline:1px #F00 solid; height:100%; width:267px; float:right;}
+        .top-m{outline:1px #0F0 solid; height:100%; width:267px; margin: 0 19.5px 0 286.5px;}
+        .bottom{outline:1px #00F solid; height:180px;}
+        .b-l{outline:1px #F00 solid; height:100%; width:412px; float:left;}
+        .b-r{outline:1px #F00 solid; height:100%; margin-left:428px;}
+        .bl-top{outline:1px #F00 solid; height:80px; margin-bottom:20px;}
+        .bl-top img{float:left; margin-right:10px;}
+        .bl-top strong{display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis font-size:15px; letter-spacing: -1px;}
+        .bl-top span{margin-top:3px; font-size:11px; display:block; overflow:hidden; color:#000;}
+        .bl-bottom{outline:1px #F00 solid; height:80px;}
+        .bl-bottom img{float:left; margin-right:10px;}
+        .bl-bottom strong{display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis font-size:15px;}
+        .bl-bottom span{margin-top:3px; font-size:11px; display:block; overflow:hidden; color:#000;}
+        .br-top{outline:1px #F00 solid; height:80px; margin-bottom:20px;}
+        .br-top img{float:left; margin-right:10px;}
+        .br-top strong{display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis font-size:15px; letter-spacing: -1px;}
+        .br-top span{margin-top:3px; font-size:11px; display:block; overflow:hidden; color:#000;}
+        .br-bottom{outline:1px #F00 solid; height:80px;}
+        .br-bottom img{float:left; margin-right:10px;}
+        .br-bottom strong{display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis font-size:15px; letter-spacing: -1px;}
+        .br-bottom span{margin-top:3px; font-size:11px; display:block; overflow:hidden; color:#000;}
+
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <div class="header"></div>
+        <div class="header">
+            <div class="left"><img src="http://static.naver.net/newsstand/up/2014/0912/nsd144718167.gif"/></div>
+            <div class="right"><img src="http://adcreative.naver.com/ad3/1004/1004874/468_60_11446516899395.jpg"/></div>
+            <div class="content">
+                <button type="button">구독하기</button>
+                <button type="button">이용자한마디</button>
+                <button type="button">소셜보내기</button>
+                <span>2016-06-05</span>
+            </div>
+        </div>
         <div class="contents">
             <div class="top">
-                <div class="top-l"></div>
-                <div class="top-r"></div>
-                <div class="top-m"></div>
+                <div class="top-l">
+                    <a href="#">
+                        <span>
+                            <img src="http://static.naver.net/newsstand/2016/0604/bloter/022857/001.jpeg" />
+                        </span> 
+                        <span class="text">한컴핀테크, "글로벌 크라우드펀딩 플랫폼 꿈꾼다"</span>
+                    </a>
+                </div>
+                <div class="top-r">
+                    <a href="#">
+                        <span>
+                            <img src="http://static.naver.net/newsstand/2016/0604/bloter/022857/003.jpg" />
+                        </span> 
+                        <span class="text">'핀테크 인증제' 괴담, 어떻게 탄생했나</span>
+                    </a>
+                </div>
+                <div class="top-m">
+                    <a href="#">
+                        <span>
+                            <img src="http://static.naver.net/newsstand/2016/0604/bloter/022857/002.jpg" />
+                        </span> 
+                        <span class="text">구글, 인터랙티브 디스플레이 기술 오픈소스로 공개</span>
+                    </a>
+                </div>
             </div>
             <div class="bottom">
                 <div class="b-l">
-                    <div class="bl-top"></div>
-                    <div class="bl-bottom"></div>
+                    <div class="bl-top">
+                        <a href="#">
+                            <img src="http://static.naver.net/newsstand/2016/0604/bloter/022857/004.jpg" alt=""/>
+                            <strong>데이터리셔스, 한국 진출…"기업의사결정도</strong>
+                            <span>글로벌 디지털 마케팅 데이터 분석 기업 데이터리셔스가 한국법인을 설립했다. 데이터리셔스는 매체 기여도 분석을 통해 기업들이 보다 명확하게 마케팅 성과를 파악하고,...</span>
+                        </a>
+                    </div>
+                    <div class="bl-bottom">
+                        <a href="">
+                            <img src="http://static.naver.net/newsstand/2016/0604/bloter/022857/006.jpg" alt="">
+                            <strong>지란지교, 나모에디터 인수</strong>
+                            <span>지란지교소프트가 에디터 솔루션 전문기업 나모에디터를 6월2일 인수했다. 나모에디터는 지란지교소프트, 지란지교시큐리티, 지란지교에스앤씨, 지란지교컴즈처럼 지란지교...</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="b-r">
-                    <div class="br-top"></div>
-                    <div class="br-bottom"></div>
+                    <div class="br-top">
+                        <a href="">
+                            <img src="http://static.naver.net/newsstand/2016/0604/bloter/022857/005.jpg" alt="">
+                            <strong>[카드] 메신저를 마케팅 채널로 활용하는 법</strong>
+                            <span>지난 6월2일 <블로터>는 여의도 중소기업중앙회에서 '부상하는 비즈니스 마케팅 채널, 메신저 플랫폼' 컨퍼런스를 열었습니다. 국내에서 많이 쓰는 카카오...</span>
+                        </a>
+                    </div>
+                    <div class="br-bottom">
+                        <a href="">
+                            <img src="http://static.naver.net/newsstand/2016/0604/bloter/022857/007.jpg" alt="">
+                            <strong>SAP코리아,"경력단절 여성 복귀 돕습니다"</strong>
+                            <span>SAP코리아가 6월2일 ‘백투워크(Back-to-Work) 프로그램’을 발표했다. 백투워크 프로그램은 잠시 육아 등의 사유로 휴직했다 직장으로 복귀를 꿈꾸는 여성...</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
