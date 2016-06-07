@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aurora</title>
+    <style type="text/css">
+        *{margin:0; padding:0;}
+        body, html{height:100%;}
+        
+        .page1{width:100%; height:150px; position:fixed; top:0;  overflow:hidden; z-index:1;}
+        .page1 video{width:100%;}
+        .menu{position:absolute; top:0;}
+        .menubar p{color:#fff; font-size:4em;}
+        /*.page2{background-color:rgba(255,255,255,0.8); height:100%; z-index:1;}*/
+        .page2{height:100%; position:relative;}
+        .page2 .bg{background-image:url(../images/aurora3.jpg); opacity:0.5; height:100%; position:relative; background-repeat:no-repeat; -webkit-background-size: cover; background-size: cover;background-position:bottom;}
+        .dptable{position:absolute; top:40%; left:50%; z-index:1;}
+        .dptable_cell p{color:#000; font-size:3em;}
+        .page3{background-image:url(../images/aurora1.jpg); height:100%; position:relative; background-repeat:no-repeat; -webkit-background-size: cover; background-size: cover;}
+        
+    </style>
+</head>
+<body>
+   <div class="page1">
+        <video width="100%" autoplay loop>
+            <source src="../mov/Aurora Borealis.mp4" type="video/mp4">
+        </video>
+        <div class="menu">
+            <div class="menubar">
+                <p>메뉴바다</p>
+            </div>
+        </div>
+    </div>
+    <div class="page2">
+        <!--<img src="../images/aurora3.jpg"></img>-->
+        <div class="dptable">
+            <div class="dptable_cell">
+                <p>떠나자</br>찌니야</p>
+            </div>
+        </div>
+        <div class="bg">
+            
+        </div>
+    </div>
+    <div class="page3"></div>
+    <div class="page4"></div>
+</body>
+</html>
