@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            width:100px; 
+            height:100px; 
+            border:1px #F00 solid; 
+            background-color: #000;
+            animation:rightmove 1s;
+            /*transition이랑 animation 사용해봄 / animation-keyframes*/
+            /*transition:width 1000ms ,height 1000ms ease;*/
+        }
+            /*width와 height의 값이 천천히 변하게 됨 / 1s=1000ms 
+            / ease는 애니메이션의 움직임을 변경할 수 있다(크롬 개발자도구 사용, 결과물:cubic-bezier(0, 1.68, 1, -0.54))
+            / transition-duration은 애니매이션이 진행되는 시간을 얘기한다*/
+            
+        /*.box:hover{*/
+        /*    background-color: red;*/
+        /*    width:300px;*/
+        /*    height:300px;*/
+        /*}*/
+        
+        @keyframes rightmove {
+             0% {  margin:0;}
+             10% { margin-left:100px; }
+             20% { margin-top:100px; margin-left:100px; }
+             50% { margin-top:100px; margin-left:0;} 
+             70% { padding:20px;}
+             100% { margin:0; padding:0;}
+         }
+         
+    </style>
+</head>
+<body>
+    <div class="box">
+        
+    </div>
+</body>
+</html>

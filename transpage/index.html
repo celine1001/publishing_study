@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>트와이스</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        body,html{height:100%;}
+        ul,ol{list-style:none;}
+        .wrapper{
+            height:100%; border:1px #F00 solid;
+            background-image: url(http://ghavpdlwl.blob.core.windows.net/twice/bg-pc.jpg);
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center top;
+        }
+        .wrapper .logo{
+            width: 350px;
+            height:350px;
+            background-image: url(http://twice.jype.com/images/mainlogo.png);
+            border:1px #F00 solid;
+            position:absolute; top:35%;
+            transform:scale(0.9,0.9);
+            transition:1s;
+        }
+        .wrapper .logo:hover{
+            transform:scale(1.2,1.2);
+            opacity:0;
+        }
+        .wrapper .header{
+            position:fixed;
+            width:100%;
+            left:0; top:0;
+            padding:0 30px; box-sizing:border-box;
+            height: 100px;
+            background-color:rgba(255,255,255,0.7);
+            box-shadow:0 2px 5px #ccc;
+            transition:1s;
+        }
+        .wrapper .header .mark a{
+            width: 104px; height: 40px; padding:25px;
+            display:block;
+            background-image:url(http://twice.jype.com/images/logo-s.png);
+            background-repeat:no-repeat;
+            background-position:center;
+            transition:1s;
+        }
+        .wrapper .header .mark a:hover{transform:rotateY(180deg);}
+        
+        @media screen and (max-width:768px){
+            .wrapper{
+                background-image: url(http://ghavpdlwl.blob.core.windows.net/twice/bg-720.jpg);
+                background-position: center center;
+            }
+            .wrapper .logo{
+                position:relative; margin:0 auto; top:20%;
+            }
+            .wrapper .header{
+                height: 55px; padding:0;
+                background-color:#fff;
+            }
+            .wrapper .header .mark a{
+                padding:0; height: 44px; 
+                transform:scale(0.6,0.6);
+            }
+            /*scale로 줄이지 않고 width,height값으로 크기를 줄여도 된다*/
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="mark">
+                <a href="mailto:"></a>
+            </div>
+        </div>
+        <div class="logo"></div>
+    </div>
+</body>
+</html>
