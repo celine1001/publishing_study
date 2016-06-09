@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>트와이스</title>
     <style type="text/css">
+        @import url(https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext);
+
         *{margin: 0;padding: 0;}
         body,html{height:100%;}
         ul,ol{list-style:none;}
@@ -39,17 +41,44 @@
             box-shadow:0 2px 5px #ccc;
             transition:1s;
         }
-        .wrapper .header .mark a{
-            width: 104px; height: 40px; padding:25px;
+        .wrapper .header .mark{float:left;}
+        .wrapper .header .nav{float: right;}
+        .wrapper .header .nav button{display:none;}
+        .wrapper .header .nav ul{font-size:0;}
+        .wrapper .header .nav li{
+            display:inline-block;
+            vertical-align:top;
+            font-size:12px;
+            line-height:100px;
+            
+        }
+        .wrapper .header .nav li a{
+            padding:0 15px;
             display:block;
-            background-image:url(http://twice.jype.com/images/logo-s.png);
-            background-repeat:no-repeat;
-            background-position:center;
+            transition:0.3s;
+            text-decoration:none;
+            font-size:1.5em;
+            font-family: 'Oswald', sans-serif;
+            
+            color:#08e9d1;
+        }
+        .wrapper .header .nav li a:hover{
+            border-top:3px #ffb0b0 solid;
+            color:#ffb0b0;
+        }
+        .wrapper .header .mark a{display:block; 
+            width: 104px; height:40px; padding:25px;
+            background-image: url(http://twice.jype.com/images/logo-s.png);
+            background-repeat: no-repeat;
+            background-position: center;
             transition:1s;
         }
-        .wrapper .header .mark a:hover{transform:rotateY(180deg);}
+        .wrapper .header .mark a:hover{
+            transform:rotateY(180deg);
+            padding-bottom:5px;
+        }
         
-        @media screen and (max-width:768px){
+            @media screen and (max-width:768px){
             .wrapper{
                 background-image: url(http://ghavpdlwl.blob.core.windows.net/twice/bg-720.jpg);
                 background-position: center center;
@@ -66,6 +95,36 @@
                 transform:scale(0.6,0.6);
             }
             /*scale로 줄이지 않고 width,height값으로 크기를 줄여도 된다*/
+        
+            .wrapper .header .mark a:hover{
+                padding:0; height:44px;
+                transform:scale(0.6,0.6) rotateY(180deg);
+            }
+            
+            .wrapper .header .nav button{
+                display:block;
+                height:55px; border:0 none;
+                padding:0 10px;
+                font-size:1.5em;
+                color:#fff;
+                background-color:rgb(8, 233, 209);
+                cursor:pointer;
+                font-family: 'Oswald', sans-serif;
+            }
+            .wrapper .header .nav button:hover + ul{
+                display:block;
+            }
+            .wrapper .header .nav ul{
+                display:none;
+                position:absolute;
+                background-color: rgba(255,255,255,0.6);
+            }
+            .wrapper .header .nav ul li{
+                vertical-align:left;
+                line-height:40px;
+            }
+            .wrapper .header .nav li a:hover{color:#ffb0b0;
+                border-top:0; border-left:3px #ffb0b0 solid;}
         }
         
         
@@ -77,6 +136,17 @@
         <div class="header">
             <div class="mark">
                 <a href="mailto:"></a>
+            </div>
+            <div class="nav">
+                <button>Main Menu</button>
+                <ul>
+                    <li><a href="">PROFILE</a></li>
+                    <li><a href="">DISCOGRAPHY</a></li>
+                    <li><a href="">GALLERY</a></li>
+                    <li><a href="">VIDEO</a></li>
+                    <li><a href="">NOTICE</a></li>
+                    <li><a href="">SCHEDULE</a></li>
+                </ul>
             </div>
         </div>
         <div class="logo"></div>
