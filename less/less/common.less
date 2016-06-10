@@ -1,0 +1,67 @@
+body{font-family: "돋움",sans-serif;}
+
+@small:5px;
+@large:10px;
+@bg-defualt:#78c4ff;
+@bg-first:#9cea96;
+
+.radius(@size:10px){
+    -webkit-border-radius: @size;
+    -moz-border-radius: @size;
+    border-radius: @size;
+}
+.inline-block(){
+    display:inline-block;
+    *zoom:1;
+    *display:inline;
+}
+.btn-primary{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100&1+0,1+62,0.7+68,0+100;Blue+to+Transparent+Sharp */
+background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(89,148,202,1) 62%, rgba(95,154,207,0.7) 68%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(89,148,202,1) 62%,rgba(95,154,207,0.7) 68%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+color:#fff
+}
+.btn-warning{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feccb1+0,f17432+50,ea5507+51,fb955e+100;Red+Gloss+%232 */
+background: rgb(254,204,177); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(254,204,177,1) 0%, rgba(241,116,50,1) 50%, rgba(234,85,7,1) 51%, rgba(251,149,94,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(254,204,177,1) 0%,rgba(241,116,50,1) 50%,rgba(234,85,7,1) 51%,rgba(251,149,94,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(254,204,177,1) 0%,rgba(241,116,50,1) 50%,rgba(234,85,7,1) 51%,rgba(251,149,94,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
+}
+
+.btn-style(@line-width:1px, @heignt:30px, @font-size:1em, @bgcolor:#ccc){
+    border:@line-width #f00 solid;
+    .inline-block();
+    .radius(@large);
+    vertical-align:middle;
+    line-height:@heignt;
+    height:@heignt;
+    text-decoration:none;
+    font-size:@font-size;
+    padding:0 20px;
+    cursor:pointer;
+    font-weight:normal;
+    background:@bgcolor
+}
+.btn{
+    .btn-style()
+}
+a.btn{
+    .btn-style(2px, 30px-2, 1em, @bg-first)
+}
+.btn-def{
+    background-color:#ccc;
+    &:hover{
+        background:darken(#ccc,10%);
+    }
+}
+// @color:#333
+// .btn-def{
+//     background-color:@color;
+//     &:hover{
+//         background:@color*2;
+//     }
+// }
