@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../font/flaticon.css" type="text/css" />
+    <style type="text/css">
+        .flaticon-placeholder:before{
+            border:1px #000 solid;
+            border-radius:50%;
+            font-size:50px;
+            padding:20px;
+            display:inline-block;
+            background:#000;
+            color:#fff;
+            transition:1s;
+        }
+        i:hover[class="flaticon-placeholder"]::before{
+            transform:rotateY(360deg);
+        }
+        
+        span::before{
+            border:1px #000 solid;
+            border-radius:50%;
+            font-size:50px;
+            padding:20px;
+            display:inline-block;
+            background:#000;
+            color:#fff;
+            transition:1s;
+        }
+        span:hover[class$="flaticon-settings"]::before{
+            transform:rotateX(360deg);
+        }
+    </style>
+</head>
+<body>
+    <i class="flaticon-placeholder">지도임</i>
+    <span class="flaticon-settings">설정</span>
+</body>
+</html>

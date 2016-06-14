@@ -65,3 +65,20 @@ a.btn{
 //         background:@color*2;
 //     }
 // }
+// round(1.64); 2
+// // 반올림
+// ceil(2.4); 3
+// // 올림
+// floor(2.6); 2
+// // 절삭
+// percentage(0.5); 50%
+div{
+    width:percentage(300/1000);
+}
+// width전체 1000 중에 300만큼 사용할걸 %로 계산방법
+div.box{
+    width:percentage(240/950);
+    height:100px;
+    background-color:saturate(@bg-defualt,20%);
+}
+// saturate채도값, desaturate는 채도를 낮추는거, fadeout는 반투명, fadein은 불투명

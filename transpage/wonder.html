@@ -3,33 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>원더걸스</title>
+    <link rel="stylesheet" href="../less/less/wonder.css" type="text/css" />
+    <link rel="stylesheet" href="../font/font2/flaticon.css" type="text/css" />
     <style type="text/css">
-        *{margin:0; padding:0;}
-        body, html{height:100%;}
-        ul, ol{list-style:none;}
-        
-        .wrapper{height:100%; border:1px #f00 solid; 
-            background-image:url(../images/Z.jpg); background-repeat:no-repeat; background-size:cover; background-position:center;
-        }
-        .wrapper .logo{width: 350px; height: 250px;
-            background-image:url(../images/logo.png); 
-            border:1px #f00 solid;
-            position:absolute; top:10%; 
-            transform:scale(0.9,0.9);
-        }
-        
-        /*720px 이하로 화면이 줄었을 때 Z2 이미지가 보여지게 된다*/
-        @media screen and (max-width:720px){
-            .wrapper{
-                background-image:url(../images/Z2.jpg);
-                background-position:center;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="wrapper">
+        <div class="header">
+            <div class="mark">
+                <a href="#"></a>
+            </div>
+            <div class="menu">
+                <button>MainMenu</button>
+                <ul>
+                    <li><a href="">PROFILE</a></li>
+                    <li><a href="">DISCOGRAPHY</a></li>
+                    <li><a href="">GALLERY</a></li>
+                    <li><a href="">VIDEO</a></li>
+                    <li><a href="">NOTICE</a></li>
+                    <li><a href="">SCHEDULE</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="logo"></div>
+        <div class="footer">
+            <div class="footer-box">
+                <div class="left">
+                    <a href="#"></a>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="#"><span class="flaticon-twitter-logo-silhouette"></span></a></li>
+                        <li><a href="#"><span class="flaticon-facebook-logo"></span></a></li>
+                        <li><a href="#"><span class="flaticon-youtube"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
+https://publishing-study-celine1001.c9users.io/transpage/wonder.html
