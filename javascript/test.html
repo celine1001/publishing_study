@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script type="text/javascript">
+        
+        a=[
+            ["장미래","김범영"],
+            ["장혜정","박하연"],
+            ["이고은","장선경"]
+        ];
+        document.write("오늘 밥을 많이먹은사람은"+ a[2][1]);
+        
+        var name = prompt("누구를 만드시겠습니까?");
+        var text1 = ["일단","어디 한 번","자아~"];
+        var text2 = ["잘생김","아름다움","못생김","드립력","병맛","비장함"];
+        var text3 = ["한 스푼","두 스푼","열 스푼","으앙어앙ㅇ아"];
+        var ran1 = Math.floor(Math.random() * text1.length);
+        var ran2 = Math.floor(Math.random() * text2.length);
+        var ran3 = Math.floor(Math.random() * text3.length);
+        document .write(name+"을 만들어볼까?"+text1[ran1]+" "+text2[ran2]+" "+text3[ran3]);
+      </script>
+</head>
+<body>
+    
+    
+    
+</body>
+</html>

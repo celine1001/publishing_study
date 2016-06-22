@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if</title>
+    <script type="text/javascript">
+        
+        // if(조건){ 실행내용 }
+        // // true여야 실행된다
+        // // 부호 &&and,  ||or, ==같다, ===는 숫자와 문자의 타입도 맞아야한다, !=이게아니면, !==아니다
+        
+        // var mesg = confirm("실행해봐");
+        // if(mesg == true){
+        //     console.log("오냐 잘햇다.");
+        // }
+        // // 위는 if(mesg){} 와 같음
+        // if(mesg != true){
+        //     console.log("껒")
+        // }
+        // // 위는 if(!mesg){} 와 같음
+        
+        var total = prompt("점수를 입력");
+        if(total>=0 && total<20){
+            console.log("가");
+        }else if(total>=20 && total<40){
+            console.log("양");
+        }else if(total>=40 && total<60){
+            console.log("미");
+        }else if(total>=60 && total<80){
+            console.log("우");
+        }else if(total>=80 && total<=100){
+            console.log("수");
+        }else{
+            console.log("다시 입력");
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

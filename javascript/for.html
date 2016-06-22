@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for</title>
+    <script type="text/javascript">
+        
+        // for
+        // while
+        // 둘 다 반복문, for 더 많이 사용, while이 더 가벼움
+        // for(조건){}
+        // 조건에는 반복실행할 내용이 들어간다, 조건을 쓸 때는 초기값;조건;증가 또는 감소 이렇게 넣음
+        // for(i=0;i < 10;i++){console.log(i)}
+        
+        for(i=0;i < 10; i++){
+                
+                console.log(i+"단");
+            
+            for(j=0;j<10;j++){
+                
+                console.log(i+"*"+j+"="+i*j);
+            }
+            
+        }
+        
+        var deck = [];
+        var shape = ["♥","◆","♣","♠"];
+        for(i=0;i<4;i++){
+            for(j=1;j<14;j++){
+                deck.push(shape[i]+j)
+            }
+        }
+        console.log(deck);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
