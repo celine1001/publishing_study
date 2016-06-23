@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        var random = Math.floor(Math.random()*100);
+        console.log(random);
+        var num = [];
+        
+        if(random%2 == 0){
+            num.push('짝');
+        }else if(random%2 == 1){
+            num.push('홀');
+            console.log(num);
+        }
+        
+        var you = prompt('홀 짝 입력');
+        if(you == num[0]){
+            alert('정답입니다 좋겠네요');
+        }else if(you !== num[0] && you=='홀'){
+            alert('꺼져');
+        }else if(you !== num[0] && you=='짝'){
+            alert('꺼져');
+        }else{
+            alert('올바른 값을 입력하지 않았을시 알아들을 수 없으니 꺼져.');
+        }
+        
+        
+
+        
+        
+        
+        
+        // var a = prompt('숫자를 입력하세요.');
+        
+        // if(a%2 == 0){
+        //     alert('짝');
+        // }else if(a%2 == 1){
+        //     alert('홀');
+        // };
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
