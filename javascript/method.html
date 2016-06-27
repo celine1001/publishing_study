@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>method</title>
+    <script type="text/javascript">
+        
+        //setTimeout(function,duration);
+        //setInterval(function,duration);
+        
+        // setTimeout(function(){
+        //     alert('나왓다')
+        // },5000)
+        
+        // setTimeout(test,5000);
+        // function test(){
+        //     console.log('실행')
+        // }
+        
+        // var i = 0
+        // setTimeout(test,500);
+        // function test(){
+        //     console.log(i++)
+        //     setTimeout(test,500);
+        // }
+        // // -----------------------------------------------
+        var i = 0
+        var head = setInterval(test,500);
+        function test(){
+            console.log(i++);
+            if(i == 10){
+                clearInterval(head)
+            }
+        }
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

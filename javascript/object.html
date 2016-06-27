@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object</title>
+    <script type="text/javascript">
+        
+        // 자료구조를 만들어낼 수 있다, 객체 안에 배열 그 안에 객체가 있는 형태를 json구조라고 한다
+        // 객체 { "지시자(다른 문법형식의 변수로 생각하자)":"값" } / 배열은 ["값","값"]
+        // 절차지향(객체와 반대개념) : 순서대로만 작성, 버전업이 힘듬
+        var car = {
+               color:'red',
+               strong:['S','M','L'],
+               fill:function(){
+                   alert('어떻게 칠할까?'+ car.color + "강도"+ this.strong[0])
+                //   내 몸 안에서 나를 부르는거 가능, this로 부르자
+                // 'fill':function(x,y){
+                //   alert('어떻게 칠할까?'+this.x + "강도"+ this.y[0]);} 이렇게도 쓴다
+               },
+               obj:{
+                   size:"aaaaa"
+               }
+        };
+           
+        console.log(car.fill())
+        // console.log(remot.obj.size)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

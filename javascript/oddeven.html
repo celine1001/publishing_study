@@ -5,33 +5,27 @@
     <title>Document</title>
     <script type="text/javascript">
         
-        var random = Math.floor(Math.random()*100);
-        console.log(random);
-        var num = [];
+        // var random = Math.floor(Math.random()*100);
+        // console.log(random);
+        // var num = [];
         
-        if(random%2 == 0){
-            num.push('짝');
-        }else if(random%2 == 1){
-            num.push('홀');
-            console.log(num);
-        }
+        // if(random%2 == 0){
+        //     num.push('짝');
+        // }else if(random%2 == 1){
+        //     num.push('홀');
+        //     console.log(num);
+        // }
         
-        var you = prompt('홀 짝 입력');
-        if(you == num[0]){
-            alert('정답입니다 좋겠네요');
-        }else if(you !== num[0] && you=='홀'){
-            alert('꺼져');
-        }else if(you !== num[0] && you=='짝'){
-            alert('꺼져');
-        }else{
-            alert('올바른 값을 입력하지 않았을시 알아들을 수 없으니 꺼져.');
-        }
-        
-        
-
-        
-        
-        
+        // var you = prompt('홀 짝 입력');
+        // if(you == num[0]){
+        //     alert('정답입니다 좋겠네요');
+        // }else if(you !== num[0] && you=='홀'){
+        //     alert('꺼져');
+        // }else if(you !== num[0] && you=='짝'){
+        //     alert('꺼져');
+        // }else{
+        //     alert('올바른 값을 입력하지 않았을시 알아들을 수 없으니 꺼져.');
+        // }
         
         // var a = prompt('숫자를 입력하세요.');
         
@@ -40,7 +34,41 @@
         // }else if(a%2 == 1){
         //     alert('홀');
         // };
+// ---------------------------------------------------------------------------------------
 
+        // 랜덤수를 뽑는다 - 랜덤수가 홀짝인지 알아본다
+        // 사용자에게 입력값을 받는다
+        // 입력값과 랜덤수가 일치하는지 본다
+        
+        var per = {
+            ran:Math.floor(Math.random()*20),
+            random:function(){
+                if(this.ran%2 == 0){
+                    return '짝'
+                }else if(this.ran%2 == 1){
+                    return '홀'
+                }
+            },
+        
+            // odd:['짝','홀'],
+            user:prompt('홀 짝을 입력'),
+            odd:function(){
+                if(this.user == this.random()){
+                    alert ('정답');
+                }else if(this.user !== this.random() && this.user == '짝'){
+                    alert ('꺼져');
+                }else if(this.user !== this.random() && this.user == '홀'){
+                    alert ('꺼져');
+                }else{
+                    alert ('홀 짝 중에 입력하라고 꺼져')
+                }
+            }
+        }
+        
+        //console.log(per.ran);
+        //console.log(per.random());
+        console.log(per.user);
+        per.odd();
     </script>
 </head>
 <body>

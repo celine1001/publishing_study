@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        function aa(){
+            alert('불렀니?');
+        }
+        // 이름이 있는 함수를 만들었음
+        aa()
+        // 만든 함수를 호출, 만든 함수보다 호출이 위에 있어도 동작가능!
+        // ----------------------------------------------------------------
+        function sum(){
+            alert('왜?');
+        }
+        // 아래 버튼에서 사용됨
+        // ----------------------------------------------------------------
+        
+        // return함수와 void함수
+        function sumv(x,y){
+            alert(x+y)
+        }
+    
+        function sumr(x,y){
+            return x+y
+        }
+        
+        var a,b,c,d,e,f;
+        aa = sumr(sumr(20,20),sumr(30,30))
+        alert(aa)
+        bb = 100 + aa + sumr(10,sumr(10,sumr(sumr(10,10),10)))
+
+    </script>
+</head>
+<body>
+    <button onclick="sum();">눌러</button>
+    <button onclick="alert('이렇게도 가능 왜냐면 alert는 이미 만들어진 기능이니까');">눌러</button>
+</body>
+</html>

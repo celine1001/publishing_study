@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>poka</title>
+    <script type="text/javascript">
+        
+        var shape = ["♥","♣","♠","◆"];
+        var pot = [];
+        
+        function reset(){
+            pot = [];
+            for(i=0;i<4;i++){
+            
+                for(u=1;u<14;u++){
+                    if(u==1){
+                        pot.push(shape[i]+"a");
+                    }else if(u==11){
+                        pot.push(shape[i]+"j");
+                    }else if(u==12){
+                        pot.push(shape[i]+"q");
+                    }else if(u==13){
+                        pot.push(shape[i]+"k");
+                    }else{
+                        pot.push(shape[i]+u);
+                    }
+                } 
+            }
+            console.log(pot);
+        }
+        
+        var user = [];
+        function addcard(){
+            //랜덤으로 수를 발생킨다.(carbox 갯수 범위)
+            //carbox에서 랜덤 수의 카드를 user 배열에 추가한다
+            //carbox에서 랜덤수의 카드를 제거한다
+            var ran = Math.floor(Math.random()*pot.length);
+            console.log(ran);
+            
+            user.push(pot[ran]);
+            console.log(user);
+            
+            pot.splice(ran,1);
+            console.log(pot);
+            
+        }
+        
+        function start(){
+            for(i=1; i<4; i++){
+                addcard();
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="reset();">카드정리</button>
+    <button onclick="addcard();">카드주기</button>
+    <button onclick="start();">게임시작</button>
+</body>
+</html>

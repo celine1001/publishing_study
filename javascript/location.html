@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        // function location(){
+        //     location.href = "http://www.naver.com"
+        // }
+        // // --------------------------------------------------------------------------------
+        // //var url = window.location.href;
+        // var url = "http://nillavanilla.firstmall.kr/goods/brand?code=0116"
+        
+        // var urlcut = url.split("?");
+        // urlcut = urlcut[1].split('=');
+        
+        // var subtext = urlcut[1].substring(1,4);
+        // console.log(subtext);
+        // 위의 substrind이나 아래의 floor를 쓰자 floor도 앞의 0을 없애줌
+        // var floorNum = Math.floor(urlcut[1]);
+        // console.log(floorNum);
+        // --------------------------------------------------------------------------------
+        var url = "https://www.myrealtrip.com/offers/2398"
+        
+        var urlcut = url.split("/");
+        console.log(urlcut);
+        
+        var subtext = urlcut[4].substring(0,4);
+        console.log(subtext);
+        
+    </script>
+    
+</head>
+<body>
+    <button onclick="location.href = 'http://www.naver.com'">이동</button>
+</body>
+</html>
