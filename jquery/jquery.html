@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+        // 문서의 순서상 스크립트가 body보다 위에 있기 때문에 body를 읽은 후에 스크립트를 읽기 위한 문법
+            
+            //document.getElementByClass('btn').innerHtml('확인');
+            $('.btn').html('확인');
+            // 위의 document.get~랑 $('.btn')~이랑 같은 말임 위에는 자바스크립트 아래는 제이쿼리
+            
+            $('.box').css('border','1px #f00 solid');
+            // css 하나만 썼을 때
+            $('.box').css({
+                'border':'1px #f00 solid',
+                'height':'100px'
+            });
+            // css 여러개 썼을 때
+        })
+        
+    </script>
+</head>
+<body>
+    <button class="btn">눌러</button>
+    <div class="box">
+        
+    </div>
+</body>
+</html>
