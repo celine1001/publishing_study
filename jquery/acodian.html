@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{list-style:none;}
+        
+        .menu{border:1px #F00 solid; width:130px; margin:0 auto;}
+        .menu li{border:1px #F00 solid;}
+        .menu li div{display:none}
+    </style>
+    
+    <script>
+        
+        $(function(){
+            
+            // $('.menu li').click(function(){
+                // 1번 방법
+                // $('.menu li div').hide(1000);
+                // 클릭한 아이만 보이고 열려있던 다른 아이는 닫혀짐
+                // $(this).children('div').show(1000);
+                // 클릭하면 열려서 보이게됨
+                
+                // 2번 방법
+                // $('.menu li div').slideUp(1000);
+                // $(this).children('div').slideDown(1000);
+                // 클릭하면 아래로 펼쳐짐
+                
+                // 3번 방법
+                // $('.menu li div').fadeOut(1000);
+                // $(this).children('div').fadeIn(1000);
+            // })
+            
+            // -------------------------------------------------------------------------------------------------------------
+            // $('.menu li').hover(function(){
+            //     $('.menu li div').stop().hide(1000);
+            //     $(this).children('div').stop().show(1000);
+            //     // stop은 하던행동 바로 멈추게 되는 아이임(그림이 나타나다가 중간에도 멈춤)
+            // })
+            
+            
+            
+            // $('.menu li').hover(function(){
+            //     //마우스 오버시
+            //     $(this).children('div').stop().show(1000);
+                
+            // },function(){
+            //     //마우스 아웃시
+            //     $(this).children('div').stop().hide(1000);
+            // })
+            
+            
+            
+            // $('.menu li').hover(function(){
+            //     //마우스 오버시
+            //     $(this).children('div').stop().show(1000).parent('li').css({
+            //         'background-color':'#666'
+            //     }).siblings().children('div').stop().hide(1000)
+            // siblings() : 현재 this를 제외한 나머지를 말함
+            // })
+            
+            
+            
+            // $('.menu li').mouseenter(function(){
+            //     //마우스 오버시
+            //     $(this).children('div').stop().show(1000).parent('li').css({
+            //         'background-color':'#666'
+            //     }).siblings().children('div').stop().hide(1000)
+                
+            //  })
+            //  $('.menu li').mouseleave(function(){
+                 
+            //  })
+            // mouse over, out / mouse enter, leave(이벤트의 수가 작음 즉, hover보다 많이 사용)
+            // -------------------------------------------------------------------------------------------------------------
+            // 위 내용을 아래처럼 풀어서 쓸 수 있음
+            // var sideMenuover = function(){}
+            // var sideMenuout = function(){}
+            // $().hover(sideMenuover,sideMenuout)
+            // --------------------------------------------------------------------------------------------------------------
+            $('.menu li').click(function(){
+                //마우스 오버시
+                $(this).children('div').toggle(1000)
+            })
+            // toggle, slideToggle, fadeToggle 
+        })
+        
+        
+    </script>
+    
+</head>
+<body>
+    
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">menu</a>
+                <div>
+                    <img src="../images/cat.png" />
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);">menu</a>
+                <div>
+                    <img src="../images/clown-fish.png" />
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);">menu</a>
+                <div>
+                    <img src="../images/penguin.png" />
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);">menu</a>
+                <div>
+                    <img src="../images/pig.png" />
+                </div>
+            </li>
+         </ul>
+        
+    </div>
+    
+    
+    
+</body>
+</html>

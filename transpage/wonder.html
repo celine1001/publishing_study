@@ -5,8 +5,24 @@
     <title>원더걸스</title>
     <link rel="stylesheet" href="../less/less/wonder.css" type="text/css" />
     <link rel="stylesheet" href="../font/font2/flaticon.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <style type="text/css">
     </style>
+    <script type="text/javascript">
+        $(function(){
+            $('.menu button').click(function(){
+                $(this).next('ul').slideToggle(500)
+            })
+            $(window).resize(function(){
+                if($(this).width() < 768){
+                    $('.menu ul').css('display','none')
+                }else if($(this).width() > 767){
+                    $('.menu ul').css('display','block')
+                }
+            })
+        })
+        
+    </script>
 </head>
 <body>
     <div class="wrapper">
