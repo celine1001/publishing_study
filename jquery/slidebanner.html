@@ -55,12 +55,13 @@ ul{list-style:none}
             }).stop().animate({   //움직여
                 left: '0'  //slide에 딱 맞게
             })
+            console.log(idx+'이거')
             idx--   //li의 순서를 줄여
-            
             if(idx < 0){  
                 idx = $('.slide li').length-1
                 $('.slide li').eq(idx).children('img').css({
-                    'left':-slideWidth
+                    'left':-slideWidth,
+                    'display':'block'
                 }).stop().animate({
                     'left':0
                 })
