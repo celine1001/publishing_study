@@ -2,10 +2,10 @@
 body, html{height:100%;}
 ul, ol{list-style:none;}
 
-.background(){
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position:center;
+.background(@a:no-repeat,@b:cover,@c:center){
+    background-repeat:@a;
+    background-size:@b;
+    background-position:@c;
 }
       
 .wrapper{

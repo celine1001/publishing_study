@@ -1,0 +1,153 @@
+<!doctype html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+*{margin:0; padding:0;}
+ul{list-style:none}
+.slide{width:500px; height:300px; border:1px #F00 solid; position:relative; margin:0 auto; overflow:hidden;}
+.slide button{position:absolute; top:50%; z-index:1;}
+.slide button.next{right:0px;}
+.slide button.prev{left:0px;}
+.slide ul{text-align:center;}
+.slide li{display:inline-block;}
+.slide li a{display:block; width: 20px; height:20px; position:relative; z-index: 1; color:#fff; top:280px; text-decoration:none; border-radius:50%;}
+.slide li img{width:100%; position:absolute; left:0; top:0; display:none;}
+.slide li:first-child img{display:block;}
+.slide li.on a{background-color:#6ee5a3;}
+</style>
+<script type="text/javascript">
+$(function(){
+    var idxarr = [];
+    var slideidx;
+    
+    $('body .slide').each(function(i,e){
+        // i는 index e는 element를 말한다
+        idxarr.push(0)
+        console.log(idxarr)
+    })
+    
+    function move(start,end,selector,target){
+        $('body .slide').eq(target).find('li').eq(selector).children('img').css({
+            'left':start,
+            'display':'block'
+        }).stop().animate({
+            'left':end
+        }).parent().addClass('on').siblings().removeClass('on')
+        if(idxarr[target] == $('body .slide').eq(target).find('li').length){
+            idxarr[target] = 0;
+            move('100%','0',idxarr[slideidx],target);
+        }else if(idxarr[target] < 0){
+            idxarr[target] = $('body .slide').eq(target).find('li').length-1;
+            move('-100%','0',idxarr[slideidx],target);
+        }
+    }
+    
+    $('.next').click(function(){
+        slideidx = $(this).parent().index();
+        // console.log(slideidx);
+        move('0','-100%',idxarr[slideidx],slideidx);
+        idxarr[slideidx]++;
+        move('100%','0',idxarr[slideidx],slideidx);
+        // console.log(idxarr[slideidx])
+    })
+    
+    $('.prev').click(function(){
+        slideidx = $(this).parent().index();
+        // console.log(slideidx);
+        move('0','100%',idxarr[slideidx],slideidx);
+        idxarr[slideidx]--;
+        move('-100%','0',idxarr[slideidx],slideidx);
+        // console.log(idxarr[slideidx])
+    })
+    
+    $('.view li a').click(function(){
+        // slideidx = $(this).parent().index();
+        var tar = $(this).parents('.slide').index();
+        // idxarr[tar]
+        // console.log( idxarr[tar])
+        idxarr[tar] = $(this).parent().index();
+        var hisidx = $(this).parents('.slide').find('li.on').index();
+        // console.log(idxarr[tar]);
+        // console.log(tar);
+        if(idxarr[tar] > hisidx){
+            move(0,'-100%',hisidx,tar);
+            move('100%',0, idxarr[tar] ,tar);
+        }else if(idxarr[tar] < hisidx){
+            move(0,'100%',hisidx,tar);
+            move('-100%',0,idxarr[tar],tar);
+        }
+        return false;
+    })
+})
+</script>
+</head>
+<body>
+    
+    <div class="slide">
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        <div class='view'>
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../images/aurora1.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../images/aurora2.jpg">
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        <div class='view'>
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../images/aurora1.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../images/aurora2.jpg">
+                </li>
+                <li>
+                    <a href="">3</a>
+                    <img src="../images/aurora3.jpg">
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="slide">
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        <div class='view'>
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../images/aurora1.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../images/aurora2.jpg">
+                </li>
+                <li>
+                    <a href="">3</a>
+                    <img src="../images/aurora3.jpg">
+                </li>
+                <li>
+                    <a href="">4</a>
+                    <img src="../images/aurora4.jpg">
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>

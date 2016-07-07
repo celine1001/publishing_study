@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+*{margin:0; padding:0;}
+ul{list-style:none}
+.slide{width:500px; height:300px; border:1px #F00 solid; position:relative; margin:0 auto; overflow:hidden;}
+.slide button{position:absolute; top:50%; z-index:1;}
+.slide button.next{right:0px;}
+.slide button.prev{left:0px;}
+.slide ul{text-align:center;}
+.slide li{display:inline-block;}
+.slide li a{display:block; width: 20px; height:20px; position:relative; z-index: 1; color:#fff; top:280px; text-decoration:none; border-radius:50%;}
+.slide li img{width:100%; position:absolute; left:0; top:0; display:none;}
+.slide li:first-child img{display:block;}
+.slide li.on a{background-color:#6ee5a3;}
+</style>
+<script type="text/javascript">
+$(function(){
+    var width = $('.slide').width()
+    var idx = 0;
+    
+    $('.next').click(function(){
+        $('.slide ul li').eq(idx).removeClass('on').children('img').animate({
+            'left':-width
+        }).parent().next('li').addClass('on').children('img').css({
+            'display':'block',
+            'left':width
+        }).animate({
+            'left':'0'
+        })
+        idx++
+        if(idx > 3){
+            idx = 0;
+            $('.slide ul li').eq(idx).addClass('on').children('img').css({
+                'display':'block',
+                'left':width
+            }).animate({
+                'left':'0'
+            })
+        }
+        console.log(idx)
+    })
+    
+    $('.prev').click(function(){
+        $('.slide ul li').eq(idx).removeClass('on').children('img').animate({
+            'left':width
+        }).parent().prev('li').addClass('on').children('img').css({
+            'display':'block',
+            'left':-width
+        }).animate({
+            'left':'0'
+        })
+        idx--
+        if(idx < 0){
+            idx = $('.slide ul li').length-1
+            $('.slide ul li').eq(idx).addClass('on').children('img').css({
+                'display':'block',
+                'left':-width
+            }).animate({
+                'left':'0'
+            })
+        }
+        console.log(idx)
+    })
+    
+    $('.slide ul li a').click(function(){
+        idx = $(this).parent().index()   //내가 클릭한 a의 부모li의 인덱스 0,1,2,3
+        var hisidx = $('.slide ul li.on').index()   //on클래스를 가지고 있는 li의 인덱스
+        console.log(idx,hisidx)
+        if(idx > hisidx){
+            $('.slide ul li').eq(hisidx).removeClass('on').children('img').animate({
+                'left':-width
+            })
+            $('.slide ul li').eq(idx).addClass('on').children('img').css({
+                'left':width,
+                'display':'block'
+            }).animate({
+                'left':'0'
+            })
+        }else if(idx < hisidx){
+            $('.slide ul li').eq(hisidx).removeClass('on').children('img').animate({
+                'left':width
+            })
+            $('.slide ul li').eq(idx).addClass('on').children('img').css({
+                'left':-width,
+                'display':'block'
+            }).animate({
+                'left':'0'
+            })
+        }
+        return false;
+    })
+    
+    var inter = setInterval(function(){
+        $('.next').click()
+    },3000)
+    $('.slide').mouseenter(function(){
+        clearInterval(inter)
+    })
+    $('.slide').mouseleave(function(){
+        inter = setInterval(function(){
+            $('.next').click()
+        },3000)
+    })
+})
+</script>
+</head>
+<body>
+    
+    <div class="slide">
+        <button class="next">다음</button>
+        <button class="prev">이전</button>
+        <div>
+            <ul>
+                <li class="on">
+                    <a href="">1</a>
+                    <img src="../images/aurora1.jpg">
+                </li>
+                <li>
+                    <a href="">2</a>
+                    <img src="../images/aurora2.jpg">
+                </li>
+                <li>
+                    <a href="">3</a>
+                    <img src="../images/aurora3.jpg">
+                </li>
+                <li>
+                    <a href="">4</a>
+                    <img src="../images/aurora4.jpg">
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -87,8 +87,7 @@ ul{list-style:none}
             }).stop().animate({
                 left: '0'
             })
-            $('.slide ul li').eq(3).css({display:none})
-            
+
             if(idx < hisidx){
                 
                 $('.slide li').eq(idx).children('img').css({
@@ -97,7 +96,7 @@ ul{list-style:none}
                     'left':0
                 }).parent().addClass('on').siblings().removeClass('on')
             }
-                        console.log(idx,hisidx)
+            console.log(idx,hisidx)
 
             return false;
         });
