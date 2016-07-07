@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>방법1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            
+            var openEvent = function(){
+                blindFn();
+                popMaker();
+                $('.popup').show(1000);
+            }
+            
+            function blindFn(){
+                var blindTag = "";
+                blindTag += '<div class="blind">';
+                blindTag += '</div>';
+                $('body').prepend(blindTag);
+                $('.blind').css({
+                    'position':'absolute',
+                    'background-color':'#000',
+                    'left':'0',
+                    'top':'0',
+                    'bottom':'0',
+                    'right':'0',
+                    'display':'none'
+                }).fadeTo(1000,0.5);
+            }
+            
+            function popMaker(){
+                var popTag = "";
+                popTag += '<div class="popup">';
+                popTag += '<button class="closebtn">close</button>';
+                popTag += '<div class="content">';
+                popTag += '</div>';
+                popTag += '</div>';
+                $('body').append(popTag);
+                centerPosition($('.popup'));
+            }
+            
+            function centerPosition(target){
+                target.css({
+                    'left':'50%',
+                    'margin-left':function(){
+                        var a = $(this).css('width');
+                        return -parseInt(a)/2 + 'px';
+                    },
+                    'top':'50%',
+                    'margin-top':function(){
+                        var a = $(this).css('height');
+                        return -parseInt(a)/2 + 'px';
+                    }
+                })
+            }
+            
+            var closeEvent = function(){
+                $('.popup').hide();
+                $('.blind').fadeOut(1000,function(){
+                    $(this).remove()
+                });
+            }
+            
+            $('.openbtn').click(openEvent);
+            $('body').on('click','.closebtn',closeEvent);
+            
+        })
+    </script>
+    <style type="text/css">
+        .popup{
+            width:500px; height:500px; border:1px #F00 solid;
+            background-color: #fff;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+            display:none;}
+    </style>
+</head>
+<body>
+    <button class="openbtn">open</button>
+    
+</body>
+</html>

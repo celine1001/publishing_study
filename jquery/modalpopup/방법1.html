@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>방법1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            
+            var blindEvent = function(){
+                
+                var blindTag = "";
+                blindTag += '<div class="blind">';
+                blindTag += '</div>';
+                
+                $('body').prepend(blindTag);
+                $('.blind').css({
+                    'position':'absolute',
+                    'background-color':'#000',
+                    'left':'0',
+                    'top':'0',
+                    'bottom':'0',
+                    'right':'0',
+                    'display':'none'
+                }).fadeTo(1000,0.5);
+                $('.popup').show(1000);
+            }
+            
+            var closeEvent = function(){
+                $('.popup').hide(1000);
+                $('.blind').fadeOut(1000,function(){
+                    $(this).remove()
+                });
+            }
+            
+            $('.openbtn').click(blindEvent);
+            $('.closebtn').click(closeEvent);
+        })
+    </script>
+    <style type="text/css">
+        .popup{
+            width:500px; height:500px; border:1px #F00 solid;
+            background-color: #fff;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+            display:none;}
+    </style>
+</head>
+<body>
+    <button class="openbtn">open</button>
+    <div class="popup">
+        <button class="closebtn">close</button>
+    </div>
+</body>
+</html>
