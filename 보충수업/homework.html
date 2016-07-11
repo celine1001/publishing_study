@@ -1,0 +1,51 @@
+/*popup*/
+	$('.propop').on({
+		click:function(){
+			blind();
+			$('body').append('<div class="product_popup mobile"><button>열기</button></div>')
+			$('.product_popup > button').addClass('close')
+			
+			centerpop($('.product_popup'))
+			
+			var content_targent = '.'+$(this).attr('id');
+			var target_html = $(content_targent).html();
+			
+			$('.product_popup').append('<div class="pro-pop-wrap">'+target_html+'<div>');
+			
+			$('.close').click(function(){
+				$('.product_popup').animate({
+					'top':$(window).scrollTop()+$(window).height()
+				},function(){
+					$(this).remove()
+					$('.blind').fadeOut(function(){
+						$(this).remove()
+					})
+					
+				})
+				
+			})
+			return false;
+		}
+		
+	})
+	
+	
+	$(window).resize(function(){
+		
+		centerpop($('.product_popup'))
+	})
+	
+	
+	function centerpop(targent){
+		
+		targent.css({
+			
+			'margin-left':'50%',
+			'left':-(targent.width()/2)+'px',
+			'top':$(window).scrollTop()+$(window).height()
+				
+		}).show().animate({
+			'top':$(window).scrollTop()+40
+		})
+	}
+	window._centerpop = centerpop;

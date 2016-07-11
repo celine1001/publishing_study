@@ -7,13 +7,11 @@
     
     <script>
     $(function(){
-       //장막이벤트내용
-       var openPopUp = function(){
+       var openPopUp = function(){   //open 버튼을 클릭하면 실행하게 됨
            
-           blindFn();
-           
-           popMaker();
-           $('.popup').show(1000);
+           blindFn();   //검은색을 만들고 보여주기 까지
+           popMaker();   //팝업창을 만들고(중앙배치) 닫기 버튼을 만듬
+           $('.popup').show(1000);   //팝업창 보여줌
         }
         
         function popMaker(){
@@ -82,7 +80,7 @@
        //클릭이벤트 장막
         $('.open').click(openPopUp);
         $('body').on('click','.closebtn',closeEvent);
-       
+        // $('.closebtn').click(closeEvent);
        
        
        

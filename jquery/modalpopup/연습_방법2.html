@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script>
+    $(function(){
+        function blindFn(){
+            var blind_tag = "";
+            blind_tag += '<div class="blind">';
+            blind_tag += '</div>';
+            $('body').prepend(blind_tag);
+            $('.blind').css({
+                'position':'absolute',
+                'background-color':'#000',
+                'left':'0',
+                'right':'0',
+                'top':'0',
+                'bottom':'0',
+                'display':'none'
+            }).fadeTo(1000,0.5)
+        }
+        function popMaker(){
+            var pop_tag = "";
+            pop_tag += '<div class="popup">';
+            pop_tag += '<button class="close">닫아</button>';
+            pop_tag += '</div>';
+            $('body').append(pop_tag);
+            center($('.popup'))
+        }
+        function center(target){
+            target.css({
+                'left':'50%',
+                'margin-left':function(){
+                    var a = $(this).width();
+                    // console.log(-a/2 + 'px');
+                    return -a/2 + 'px';
+                },
+                'top':'50%',
+                'margin-top':function(){
+                    var a = $(this).height();
+                    // console.log(a);
+                    return -a/2 + 'px';
+                }
+            })
+        }
+        var openEvent = function(){
+            blindFn();
+            popMaker();
+            $('.popup').show(1000)
+        }
+        var closeEvent = function(){
+            $('.popup').hide(function(){
+                $(this).remove()
+            });
+            $('.blind').fadeOut(function(){
+                $(this).remove()
+            });
+        }
+        
+        $('.open').click(openEvent)
+        $('body').on('click','.close',closeEvent)
+    });
+    </script>
+    <style>
+        .popup{
+            width:500px; height:500px; border:1px #F00 solid;
+            background-color: #fff;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+            display:none;
+        }
+    </style>
+    
+</head>
+<body>
+    <button class="open">열어</button>
+</body>
+</html>

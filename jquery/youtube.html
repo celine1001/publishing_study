@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.list li a').click(function(){
+                var url = $(this).attr('href')
+                var location = 'https://www.youtube.com/embed/'+url+'?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen'
+                $('.view iframe').attr('src',location);
+
+                return false;
+            })
+        })
+    </script>
+    <style type="text/css">
+        ul{list-style:none;}
+        *{margin:0; padding:0;}
+        .view{margin:0 auto; width:660px;}
+        .list{text-align:center;}
+        .list li{width:150px; display:inline-block;}
+        .list li img{width:100%;}
+    </style>
+</head>
+<body>
+    <div class="view">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GLshspTLgvw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <ul class="list">
+        <li><a href="kn9sq7_-sYs"><img src="../images/youtube1.png" alt=""></a></li>
+        <li><a href="HrpW5PliIdU"><img src="../images/youtube2.png" alt=""></a></li>
+        <li><a href="jpTQdM7okkI"><img src="../images/youtube3.png" alt=""></a></li>
+        <li><a href="PYGODWJgR-c"><img src="../images/youtube4.png" alt=""></a></li>
+        <li><a href="GLshspTLgvw"><img src="../images/youtube5.png" alt=""></a></li>
+    </ul>
+</body>
+</html>

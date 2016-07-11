@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script>
+    // function bb(aa){
+    //     return a
+    // }
+    
+    // var aa = function(){
+        
+    // }
+
+    // bb(function(){
+    //     return "안녕하세요"
+    // })
+    
+    $(function(){
+        function blindFn(){
+            var blind_tag = "";
+            blind_tag += '<div class="blind">';
+            blind_tag += '</div>';
+            $('body').prepend(blind_tag);
+            $('.blind').css({
+                'position':'absolute',
+                'background-color':'#000',
+                'left':'0',
+                'right':'0',
+                'top':'0',
+                'bottom':'0',
+                'display':'none'
+            }).fadeTo(1000,0.5)
+        }
+        function popMaker(id){
+            // var contents = $('.'+id).html();
+            var pop_tag = "";
+            pop_tag += '<div class="popup '+id+'">';
+            pop_tag += '<button class="close">닫아</button>';
+            pop_tag += '<div class="content">'
+            // pop_tag += contents;
+            pop_tag += '</div>'
+            pop_tag += '</div>';
+            $('body').append(pop_tag);
+            $('.content').load('load.html .'+id);
+            center($('.popup'))
+        }
+        function center(target){
+            target.css({
+                'left':'50%',
+                'margin-left':function(){
+                    var a = $(this).width();
+                    // console.log(-a/2 + 'px');
+                    return -a/2 + 'px';
+                },
+                'top':'50%',
+                'margin-top':function(){
+                    var a = $(this).height();
+                    // console.log(a);
+                    return -a/2 + 'px';
+                }
+            })
+        }
+        // var openEvent = function(){
+        //     var id = $(this).attr('id')
+        //     blindFn();
+        //     popMaker(id);
+        //     $('.popup').show(1000)
+        // }
+        function openEvent(){
+            var id = $(this).attr('id')
+            blindFn();
+            popMaker(id);
+            $('.popup').show(1000)
+        }
+        var closeEvent = function(){
+            $('.popup').hide(function(){
+                $(this).remove()
+            });
+            $('.blind').fadeOut(function(){
+                $(this).remove()
+            });
+        }
+        
+        $('.open').click(openEvent)
+        $('body').on('click','.close',closeEvent)
+
+    })
+    </script>
+    <style>
+        .popup{
+            width:500px; height:500px; border:1px #F00 solid;
+            background-color: #fff;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+            display:none;
+        }
+        .pop1{width:600px; height:600px; display:none;}
+        .pop2{width:200px; height:200px; display:none;}
+        .pop3{width:300px; height:600px; display:none;}
+        .pop4{width:700px; height:600px; display:none;}
+        
+        .popup.pop1 .wrap{color:#F00;}
+        .popup.pop2 .wrap{color:#FF0;}
+        .popup.pop3 .wrap{color:#F0F;}
+        .popup.pop4 .wrap{color:#0F0;}
+    </style>
+    
+</head>
+<body>
+    
+    <button class="open" id="pop1">열어</button>
+    <button class="open" id="pop2">열어</button>
+    <button class="open" id="pop3">열어</button>
+    <button class="open" id="pop4">열어</button>
+    
+    <!--<div class="pop1"> -->
+    <!--    <div class="wrap">-->
+    <!--       AAAAA-->
+    <!--    <button>확인</button>-->
+    <!--     </div>  -->
+    <!--</div>-->
+    <!--<div class="pop2"> -->
+    <!--    <div class="wrap">-->
+    <!--        BBBB-->
+    <!--        <button>확인</button>-->
+    <!--     </div>  -->
+    <!--</div>-->
+    <!--<div class="pop3"> -->
+    <!--    <div class="wrap">-->
+    <!--        CCCC-->
+    <!--    <button>확인</button>-->
+    <!--     </div>  -->
+    <!--</div>-->
+    <!--<div class="pop4"> -->
+    <!--    <div class="wrap">-->
+    <!--        DDDD-->
+    <!--    <button>확인</button>-->
+    <!--     </div>  -->
+    <!--</div>-->
+    
+</body>
+</html>

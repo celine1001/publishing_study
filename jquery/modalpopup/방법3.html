@@ -11,12 +11,12 @@
        
         
         function popMaker(id){
-            
+            //id는 지금 클릭한 열어버튼의 id값이다 즉, pop1/pop2/pop3/pop4 가 된다
             var contents = $('.'+id).html();
-            
+            // $('.pop1').html() 이 된다
             
             var tag = "";
-            tag+='<div class="popup '+id+'">';
+            tag+='<div class="popup '+id+'">';   //div가 새로 만들어지는데 class가 "popup pop1" 이런식
             tag+='<button class="closebtn">닫기</button>';
             tag+='<div class="content">';
             tag+=contents;
@@ -24,6 +24,7 @@
             tag+='</div>';
             
             $('body').append(tag);
+            console.log(tag);
             centerPosition($('.'+id));
         }
         
@@ -79,9 +80,9 @@
             })
         }
        
-       var openPopUp = function(){
-           var id = $(this).attr('id');
-           blindFn(); // 막생성
+       var openPopUp = function(){   //열어 버튼을 클릭하면 실행
+           var id = $(this).attr('id');   //지금 클릭한 열어버튼의 id값을 가져와서 id변수에 담는다
+           blindFn();   //검은색 바탕 만듬
            popMaker(id); // 팝생성 //팝위치
            $('.popup').show(1000); //보여주기
         }
