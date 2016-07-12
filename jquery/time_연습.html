@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>똑딱똑딱</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style type="text/css">
+        .wrap div{display:inline-block;}
+        .wrap span{display:inline-block; width:42px; height:57px; border:1px #000 solid; background-image:url(../images/txt-num.png); text-indent:-9999px;}
+    </style>
+    <script>
+        $(function(){
+            
+            setInterval(function(){
+                            hoursArr = [];
+            minutesArr = [];
+            secondsArr = [];
+
+                var time = new Date();
+                // console.log(time);
+                var hours = time.getHours();
+                var minutes = time.getMinutes();
+                var seconds = time.getSeconds();
+                // console.log(hours,minutes,seconds)
+                hours = arr(hours,hoursArr);
+                minutes = arr(minutes,minutesArr);
+                seconds = arr(seconds,secondsArr);
+                
+                print(hours,$('.hours'));
+                print(minutes,$('.minutes'));
+                print(seconds,$('.seconds'));
+            },1000)
+            
+            function arr(time,arr){
+                arr = [];
+                time = String(time);
+                // console.log(time)
+                if(time < 10){
+                    time = '0'+time
+                }
+                arr.push(time.substring(0,1));
+                // console.log(arr)
+                arr.push(time.substring(1,2));
+                // console.log(arr);
+                return arr;
+            }
+            
+            function print(time,selec){
+                // selec.children('span').eq(0).text(time[0]);
+                // selec.children('span').eq(1).text(time[1]);
+                for(i=0; i<2; i++){
+                    selec.children('span').eq(i).text(time[i])
+                    var ani = -1 * time[i] * 100 + 'px'
+                    console.log(ani)
+                    selec.children('span').eq(i).animate({
+                        'background-position-Y':ani
+                    })
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="hours">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="minutes">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="seconds">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>

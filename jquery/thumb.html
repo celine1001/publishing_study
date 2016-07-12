@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script>
+        
+        $(function(){
+            
+            
+            
+            $('.slide ul').css({
+                width:function(){
+                    var target = $('.slide ul li');
+                    return target.width() * target.size();
+                }
+            })
+            
+            
+           
+            idx = 0
+            $('.btn').click(function(){
+                var target =  $('.slide ul li')
+                var viewThumb = 5;
+                var aa = target.width() * viewThumb;
+                count = target.length / 5
+                
+                idx ++
+                
+                if(idx >= count){
+                    idx == count
+                    return
+                }else{
+                     $('.slide ul').animate({
+                     right:'+='+aa+'px'
+                    })
+                }
+                
+               
+                
+            })
+            
+            
+        })
+    </script>
+    
+    <style>
+        .slide{width:500px;  background: #CCC; margin-left:200px;}
+        ul{list-style:none; position:relative; height:100px; border:1px #F00 solid; width:500px; margin:0; padding:0;}
+        ul li{width:100px; height:100px; outline:1px #F00 solid; float:left;}
+        
+        
+        
+    </style>
+    
+    
+</head>
+<body>
+    <button class="btn">눌러지마</button>
+    <div class="slide">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    
+    
+    
+</body>
+</html>

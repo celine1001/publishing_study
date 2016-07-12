@@ -5,7 +5,8 @@
     <title>clock</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <style>
-        .hours>span, .minutes>span, .seconds>span{width:100px; height:100px; border:1px #f00 solid; display:inline-block;}
+        .yy div{display:inline-block;}
+        .hours>span, .minutes>span, .seconds>span{width:42px; height:57px; border:1px #000 solid; display:inline-block; text-align:center; font-size:30px; background-image:url(../images/txt-num.png); text-indent:-9999px; background-color:#000;}
     </style>
     <script>
         // var time = new Date();
@@ -35,9 +36,16 @@
             
             setInterval(function(){
                 var time = new Date();
+                console.log(time)
                 var hours = time.getHours();
                 var minutes = time.getMinutes();
                 var seconds = time.getSeconds();
+                
+                if(hours >= 7 && hours < 17){
+                    $('body span').css('background-color','blue')
+                }else{
+                    $('body span').css('background-color','red')
+                }
                 
                 hours = arrPush(hours,hoursArr);
                 minutes = arrPush(minutes,minutesArr);
@@ -81,8 +89,13 @@
             
             function timeprint(time, name){
                 for(i=0; i<2; i++){
-                   name.children('span').eq(i).text(time[i])
+                   name.children('span').eq(i).text(time[i]);
+                   var num = -1 *(Number(time[i]*100)) + 'px';
+                   name.children('span').eq(i).animate({
+                       'background-position-Y':num
+                   })
                 }
+                
             }
             
         })
