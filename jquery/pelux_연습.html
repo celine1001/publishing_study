@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>연습</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        var spot = [];
+        var wrapHeight = 0;
+        $(window).load(function(){
+            $('.wrap div').each(function(i,e){
+                spot.push($(e).offset().top); //1: spot배열에 div각각의 top값을 넣는다
+                // console.log(spot)
+                $(e).css('top',spot[i]); //3: div각각에 top값을 spot배열의 값을 준다 - 공중에 떠서 맨마지막 사진만 보이던 상태에서 사진들이 아래로 다시 펼쳐진다 하지만 fixed상태여서 스크롤을 내려도 아래 이미지를 볼 수는 없다
+                wrapHeight += $(e).height(); //4: div각각의 height값이 더해지고 대입되어 축적된다
+                // console.log(wrapHeight)
+            })
+            
+            $('.wrap').height(wrapHeight); //5: wrap의 height을 축적된 값으로 준다
+            
+            $('.wrap div').css({
+                'position':'fixed' //2: position fixed를 주면 사진이 사라짐 css에서 width값 100% 주면 fixed 때문에 공중에 떠서 맨마지막 사진만 보이게 된다
+            })
+            
+            $(window).scroll(function(){
+                var sct = $(this).scrollTop(); //6: window의 스크롤 값을 sct에 담는다(움직이는대로의 스크롤값)
+                // console.log(sct)
+                $('.wrap div').each(function(i,e){
+                    var tt = spot[i] -sct;   //7: tt의 값이 음수가 되어야 처음 이미지가 위로 올라가면서 아래 이미지가 위로 올라가게 된다(sct의 값이 크기 때문에 tt가 음수가 된다)
+                    if(spot[i] < sct) tt*=0.5;   //8: 배열에 담긴 div의 top값 보다 스크롤의 위치가 크면 속도가 0.5느려진다
+                    $(e).css({
+                        'top': tt  
+                    })
+                })
+            })
+        })
+    </script>
+    <style type="text/css">
+        *{padding:0; margin:0;}
+        body, html{height:100%;}
+        .wrap{height:100%; width:100%;}
+        .wrap div{height:100%; width:100%; outline:1px #00F solid; background-size:cover;}
+        .wrap div.section1{background-image:url(../images/cat15.jpg);}
+        .wrap div.section2{background-image:url(../images/cat2.jpg);}
+        .wrap div.section3{background-image:url(../images/cat3.jpg);}
+        .wrap div.section4{background-image:url(../images/cat4.jpg);}
+        .wrap div.section5{background-image:url(../images/cat5.jpg);}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="section1"></div>
+        <div class="section2"></div>
+        <div class="section3"></div>
+        <div class="section4"></div>
+        <div class="section5"></div>
+    </div>
+</body>
+</html>

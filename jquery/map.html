@@ -1,0 +1,48 @@
+<!--preview 말고 서버를 켜서 보자-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #map{width:800px; height:350px;}
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <button onclick="map(37.6246154, 127.0446125)">우리집</button>
+    <button onclick="map(37.5718965, 126.9872285)">학원</button>
+    
+    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=d97a1954fd053b90f75444d7fd01c974"></script>
+    <script type="text/javascript">
+        
+        map(37.6246154, 127.0446125);
+        
+        function map(x,y){
+            //$('#map *').remove();
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                mapOption = { 
+                    center: new daum.maps.LatLng(x,y), // 지도의 중심좌표(위도,경도)
+                    level: 4 // 지도의 확대 레벨(최초)
+                };
+            
+            // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+            var map = new daum.maps.Map(mapContainer, mapOption); 
+            
+            var markerPosition  = new daum.maps.LatLng(x,y); 
+
+            // 마커를 생성합니다
+            var marker = new daum.maps.Marker({
+                position: markerPosition
+            });
+            
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+            
+            // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+            // marker.setMap(null);    
+        }
+    </script>
+</body>
+</html>

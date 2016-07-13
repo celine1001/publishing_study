@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script>
+        
+        $(function(){
+
+            $('.slide ul').css({
+                width:function(){
+                    var target = $('.slide ul li');
+                    return target.width() * target.size();
+                }
+            })
+            
+            idx = 0
+            $('.next').click(function(){
+                var target =  $('.slide ul li')
+                var viewThumb = 5;
+                var aa = target.width() * viewThumb;
+                var count = target.length / 5
+                
+                idx ++
+                
+                if(idx >= count){
+                    idx = count-1
+                    console.log(idx)
+                    return
+                }else{
+                     $('.slide ul').animate({
+                     right:'+='+aa+'px'
+                    })
+                }
+            //   i++ ++i 달라.
+            })
+            
+            $('.prev').click(function(){
+                
+                var target =  $('.slide ul li')
+                var viewThumb = 5;
+                var aa = target.width() * viewThumb;
+
+                idx -- 
+                // console.log(idx)
+                if(idx < 0 ){
+                     idx = 0
+                    console.log(idx)
+                    return
+                }else{
+                     $('.slide ul').animate({
+                     right:'-='+aa+'px'
+                     
+                    })
+                }
+            })
+            
+            $('.slide li a').click(function(){
+                var now = $(this).attr('href')
+                $('.view').children('img').attr('src',now)
+                return false;
+            })
+        })
+    </script>
+    
+    <style>
+        .view{width:1000px; height:700px; overflow:hidden; margin:0 auto;}
+        .view img{width:1000px; height:700px;}
+    
+        .wrap{width: 590px; margin:0 auto;}
+        .slide{width:500px;  background: #CCC; overflow:hidden;}
+        .slide ul{list-style:none; position:relative; height:100px; border:1px #F00 solid; width:500px; margin:0; padding:0;}
+        .slide ul li{width:100px; height:100px; outline:1px #fff solid; float:left;}
+        .slide ul li img{width:100px; height:100px;}
+        .prev{float:left; margin-top:30px;}
+        .next{float:right;margin-top:30px;}
+    </style>
+
+</head>
+<body>
+    <div class="view">
+        <img src="https://pixabay.com/static/uploads/photo/2016/06/14/00/14/cat-1455468_960_720.jpg"></img>
+    </div>
+    
+    <div class="wrap">
+        <button class="prev">이전</button>
+        <button class="next">다음</button>
+        <div class="slide">
+            <ul>
+                <li><a href="https://pixabay.com/static/uploads/photo/2016/06/14/00/14/cat-1455468_960_720.jpg"><img src="../images/cat1.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2013/10/28/14/30/cat-201855_960_720.jpg"><img src="../images/cat2.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2016/04/16/23/07/cat-1333926_960_720.jpg"><img src="../images/cat3.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2014/06/03/01/31/cat-360807_960_720.jpg"><img src="../images/cat4.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2016/06/15/17/56/cat-1459522_960_720.jpg"><img src="../images/cat5.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2016/05/22/09/46/cat-1408123_960_720.jpg"><img src="../images/cat6.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2016/05/26/14/36/cat-1417278_960_720.jpg"><img src="../images/cat7.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2016/05/23/22/52/cat-1411463_960_720.jpg"><img src="../images/cat8.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2016/04/24/19/17/cat-1350411_960_720.jpg"><img src="../images/cat9.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2014/06/28/23/30/cat-379118_960_720.jpg"><img src="../images/cat10.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2015/11/03/00/40/cat-1019355_960_720.jpg"><img src="../images/cat11.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2015/11/16/21/44/cat-1046470_960_720.jpg"><img src="../images/cat12.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2015/11/26/15/23/cat-1064077_960_720.jpg"><img src="../images/cat13.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2015/12/15/14/00/cat-1094292_960_720.jpg"><img src="../images/cat14.jpg" alt="" /></a></li>
+                <li><a href="https://pixabay.com/static/uploads/photo/2015/11/15/21/24/cat-1044876_960_720.jpg"><img src="../images/cat15.jpg" alt="" /></a></li>
+            </ul>
+        </div>
+        
+    </div>
+</body>
+</html>
