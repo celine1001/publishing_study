@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+        <script>
+            
+            var HelloCtrl = function($scope){
+               
+            }
+            // helloCtrl이 변수로 선언되지 않으면 아래 controller부분의 yyy는 보여지지 않는다.
+        </script>
+</head>
+<body ng-app ng-init="yyy='world'">
+    
+    <h1>Hello {{yyy}}</h1>
+    
+    <div ng-controller="HelloCtrl">
+        Say hello to: <input type="text" ng-model="$parent.yyy" /><br/>
+        Hell, {{yyy}}!
+    </div>
+    
+</body>
+</html>

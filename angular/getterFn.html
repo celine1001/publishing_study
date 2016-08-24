@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getter</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    
+    <script>
+        var getterCtrl = function($scope){
+            $scope.getSum = function(){
+                return $scope.name;
+            }
+        }
+    </script>
+</head>
+<body ng-app>
+    
+    <div ng-controller="getterCtrl">
+        say hello to: <input type="text" name="" ng-model="name"/>
+        <h1>hello, {{getSum()}}</h1>
+    </div>
+</body>
+</html>

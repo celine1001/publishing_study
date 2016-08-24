@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        
+        
+        $(function(){
+            $.getJSON('class.json',function(data){   //기존의 사용했던 obj변수 이름은 data로 바꿔주면 된다
+                
+                // -----------------------------------------------------------------
+                // console.log(obj.team1[0].userName)   //콘솔로 보게 되면 내이름이 나오게 된다
+                // -----------------------------------------------------------------
+                // $.each(obj,function(i,e){
+                //     console.log(e[1])   //고은언니와 하연이가 나오게 된다
+                // })
+                
+                // -----------------------------------------------------------------
+                // for(i=0; i < obj.team1.length; i++){
+                //     console.log(obj.team1[i].userName)
+                // }
+                
+                // -----------------------------------------------------------------
+                // console.log("for")   //객체에 쓸 수 없음
+                // for(i=0; i < obj.team1.length; i++){
+                //     console.log(obj.team1[i].userName)
+                // }
+                
+                //  console.log('each')   //다 되긴 하는데 team1 이름은 보이지 않음
+                // $.each(obj.team1,function(i,e){
+                //   console.log(e.userName)
+                // })
+                
+                // console.log("forin / obj")   //객체를 볼 수 있음
+                // for(var i = 0 in obj){
+                //     console.log(obj[i])
+                // }
+                // -----------------------------------------------------------------
+                var table_element = ""
+                table_element += "<table>"
+                $.each(data.team1,function(i,e){
+                    
+                    table_element += "<tr>"
+                    
+                    $.each(e,function(j,f){
+                        table_element += "<td>"
+                        table_element += f
+                        table_element += "</td>"
+                    })
+                    
+                    table_element += "</tr>"  
+                })
+                table_element += "</table>"
+                
+                $('.table').html(table_element)
+    
+                }) 
+            
+            
+        })
+    </script>
+    <style>
+        .table table{border:1px #F00 solid; width: 100%;}
+        .table tr{border:1px #000 solid;}
+        .table td{border:1px #00F solid;}
+    </style>
+</head>
+<body>
+    <div class="table"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getter</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    
+    <script>
+        var worldCtrl = function($scope){
+            $scope.pp = 9000;
+            $scope.box = [
+                    {"name":"한국","pupulation":7000},
+                    {"name":"일본","pupulation":12000},
+                    {"name":"중국","pupulation":130000},
+                    {"name":"인도","pupulation":120000},
+                    {"name":"호주","pupulation":2200}
+                ]
+        }
+    </script>
+</head>
+<body ng-app>
+    <div ng-controller="worldCtrl">
+        <ul ng-repeat="contry in box"> 
+        <!-- in 만 명령어임 -->
+            <li>
+                나라:{{contry.name}}, 의 인구는 {{contry.pupulation}} 인구이다.
+            </li>
+        </ul>
+        <p>아시아의 인구는 {{pp}}만 인구이다.</p>
+    </div>
+</body>
+</html>
