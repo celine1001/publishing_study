@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+</head>
+
+<body ng-init="person = {name:'친구들',favorite:['수박','귤','키위','복숭아']}">
+    
+    <h1>hello {{person.name}}</h1>
+    <h2>좋아하는과일</h2>
+    <ul ng-repeat="fruit in person.favorite">
+        <li><a href="../proudct/{{fruit}}.jpg">{{fruit}}</a></li>
+    </ul>
+    
+</body>
+</html>
+
+<!-------------------------------------------같은 것을 제이쿼리로 만들기----------------------------------------------------------->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script>
+        
+        $(function(){
+            
+            var name = "친구들"
+            var fruit = ['사과','배','포도','블루베리','망고','파인애플','천혜양']
+            $('#greeting').text(name);
+            
+            for(var i = 0 in fruit){
+                var html = ""
+                html += "<li>"
+                html += "<a href='"+fruit[i]+"'>"
+                html += fruit[i]
+                html += "</a>"
+                html += "</li>"
+                
+                $('#favorite').append(html)
+            }
+        })
+        
+    </script>
+    
+</head>
+<body>
+    
+    <h1 id="greeting"></h1>
+    <h2>좋아하는과일</h2>
+    <ul id="favorite"></ul>
+    
+</body>
+</html>

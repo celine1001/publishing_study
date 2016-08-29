@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+</head>
+
+<body ng-init="person = {name:'친구들',favorite:['수박','귤','키위','복숭아']}">
+    
+    <h1>hello {{person.name}}</h1>
+    <p>과일의 갯수:{{numberOffavorite = person.favorite.length}}</p>
+    <p>과일갯수 * $100 = {{numberOffavorite * 100 | currency}}</p>
+    
+</body>
+</html>

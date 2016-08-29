@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+    
+    <script>
+        
+        var app = angular.module('hello',[]);
+                        // 이렇게 작성을 약속돼 있음
+        app.controller('helloCtrl',function($scope){
+            $scope.firstName ="선경";
+            $scope.lastName ="장";
+        })
+        
+    </script>
+    
+</head>
+<body ng-app="hello">
+<!--ng-app에 이름을 지어줌-->
+    <div ng-controller="helloCtrl">
+        성 <input type="text" ng-model="lastName"/><br/>
+        이름 <input type="text" ng-model="firstName"/><br/>
+               
+        <h1>{{lastName + firstName}}</h1>
+    </div>
+    
+</body>
+</html>
