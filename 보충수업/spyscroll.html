@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+   <script>
+        $(function(){
+                
+            var stop = 0;
+            
+            
+                function ani(){
+                   $('body').animate({
+                       scrollTop:'100px'
+                   },function(){
+                      stop = 0
+                    // 0으로 만들어주면 이벤트를 더 실행할 수 있음
+                   })
+                }
+                
+            $("html, body").on('mousewheel DOMMouseScroll', function(e) {
+                // script의 mousewheel 네이티브이벤트! 래핑이벤트는 mouseenter로 가능
+                console.log(e)
+                e.preventDefault();
+                // 콘솔은 찍히는데 휠 내릴때 스크롤은 안내려감
+                
+                var y = e.originalEvent.deltaY
+                // deltaY로 스크롤이 움직이지 않는 상태에서 내렸는지 올렸는지 위치 확인가능
+                
+                if(y > 0 && stop == 0){
+                    stop =1
+                    // stop으로 이벤트를 한 번만 실행한다
+                    ani()
+                    
+                }else if(y < 0 && stop == 0){
+                    stop =1
+                    ani()
+                    
+                }
+                
+            });
+        });
+   </script>
+    
+</head>
+<body>
+    <div style="height:2000px; border:1px #F00 solid;"></div>
+   
+</body>
+</html>
